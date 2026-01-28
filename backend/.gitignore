@@ -1,0 +1,4 @@
+# .gitignore file should include:
+.env
+.env.local
+.env.*.local
