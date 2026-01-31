@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     },
     createdAt : {
         type : Date,
-        default: Date,now
+        default: Date.now
     }
 });
 
@@ -42,7 +42,7 @@ userSchema.pre("save",async function(next){
 
 // compare password method 
 userSchema.methods.comparePassword = async function(candidatePassword){
-    return await bcrypt.compare(candidatePassword,this.passowrd);
+    return await bcrypt.compare(candidatePassword,this.password);
 };
 
 module.exports = mongoose.model("user",userSchema);
